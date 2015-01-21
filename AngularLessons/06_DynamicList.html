@@ -1,0 +1,40 @@
+<html ng-app="repeatApp">
+	<head>
+		<meta charset="utf-8">
+		<title>6 Dynamic List</title>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js"></script>
+		<script>
+			var ngApp = angular.module('repeatApp',[]);
+			ngApp.controller('repeatController',function($scope) {
+				$scope.fruits=['apple','mango','pear'];
+				
+				$scope.addFruit = function() {
+					if( $scope.fruits.indexOf($scope.newfruit) === -1) {
+						$scope.fruits.push($scope.newfruit);
+						$scope.newfruit = "";
+					}	
+				}
+				$scope.removeFruit = function (delFruit) {
+					if( $scope.fruits.indexOf($scope.newfruit) === -1) {
+						$scope.fruits.splice($scope.fruits.indexOf(delFruit),1);
+					}	
+				}
+			});
+		</script>
+	</head>
+	<body ng-controller="repeatController">
+		Fruits List <select>
+			<option ng-repeat="fruit in fruits" value="fruit">{{fruit}}</option>
+		</select	
+
+		<ul>
+			<li ng-repeat="fruit in fruits"> {{fruit}} <a href="" ng-click="removeFruit(fruit)">-</a> </li>
+		</ul>
+		<form ng-submit="addFruit()">
+			Fruit <input type="text" ng-model="newfruit" />
+			<input type="submit" value="Add">
+		</form>	
+		<br/>
+	</body>
+</html>
