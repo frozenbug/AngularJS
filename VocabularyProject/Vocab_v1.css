@@ -1,0 +1,30 @@
+body
+{
+	color:grey;
+}
+.title
+{
+	width:10%; 
+	display:inline-table;
+	text-align:right;
+	padding: 5px 5px;
+}
+.value
+{
+	width:80%; 
+	display:inline-table;
+	padding: 5px 5px;
+}
+.btn
+{
+	width:30%; 
+	display:inline-table;
+	padding: 5px;
+}
+.btn input
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	color:darkgrey;
+}
