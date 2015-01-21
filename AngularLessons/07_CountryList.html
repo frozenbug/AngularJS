@@ -1,0 +1,27 @@
+<html ng-app="countryList">
+	<head>
+		<meta charset="utf-8">
+		<title>7 Country List </title>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js"></script>
+		<script>
+			var ngApp = angular.module('countryList',[]);
+			ngApp.controller('countryController',['$scope',function(s){
+				s.countries = [
+					{"countryName":"India","population":1210},
+					{"countryName":'China',"population":1339},
+					{"countryName":'United States',"population":320}
+				];
+			}]);
+		</script>
+	</head>
+	<body ng-controller="countryController">
+		<table>
+			<tr>
+				<th>Country</th>
+				<th>Population</th>
+			</tr>
+			<tr ng-repeat="country in countries"><td>{{country.countryName}}</td><td>{{country.population}}</td></tr>
+		</table>
+	</body>
+</html>
