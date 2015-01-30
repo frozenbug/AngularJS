@@ -9,19 +9,26 @@
 		<link rel="stylesheet" href="Vocab_v2.css"></link>
 	</head>
 	<body ng-controller="vocabController">
-		<div class="score">
-			Score	: <span class="cscore">{{words_success}} / {{words_completed}}</span><br>
-			Percentage	: <span class="cpct">{{words_pct}}%</span><br>
-			Words Pending: <span class="cpending">{{words_left}}</span>
-		</div><br>
+		<div id="output">
+			<div class="score">
+				Score	: <span class="cscore">{{words_success}} / {{words_completed}}</span><br>
+				Percentage	: <span class="cpct">{{words_pct}}%</span><br>
+				Words Pending: <span class="cpending">{{words_left}}</span>
+			</div><br>
 		
-		<input type="button" value="Validate" ng-click="validate()" id="validate"/>
-		<input type="button" value="Next Question" ng-click="getNextQn()" id="next"/><br><br>
+			<input type="button" value="Validate" ng-click="validate()" id="validate"/>
+			<input type="button" value="Next Question" ng-click="getNextQn()" id="next"/>
+			<input type="button" value="Show Summary" ng-click="summary()" hidden="hidden" id="bSummary"/><br><br>
 
-		<div>{{meaning}}</div><br>
-		Ans:<input type="input" id="word"><br>
+			<div>{{meaning}}</div><br>
+			Ans:<input type="input" id="word"><br>
 		
-		<div id="ans">{{word}}</div><br>
-		
+			<div id="ans">{{word}}</div><br>
+		</div>
+		<div id="summary" hidden="hidden">
+				Score	: <span class="cscore">{{words_success}} / {{words_completed}}</span><br>
+				Percentage	: <span class="cpct">{{words_pct}}%</span><br>
+				Words Pending: <span class="cpending">{{words_left}}</span>		
+		</div>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-div.score
+.score
 {
 	font-size:12;
 	color:grey;
@@ -9,9 +9,16 @@ span.cscore
 }
 span.cpct
 {
-	color:lightblue;
+	color:orange;
 }
 span.cpending
 {
 	color:lightblue;
+}
+#summary
+{	
+	color:grey;
+	font-size:50px;
+	text-align: center;
+	padding-top:100px;
 }
