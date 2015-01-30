@@ -1,0 +1,17 @@
+div.score
+{
+	font-size:12;
+	color:grey;
+}
+span.cscore
+{
+	color:blue;
+}
+span.cpct
+{
+	color:lightblue;
+}
+span.cpending
+{
+	color:lightblue;
+}

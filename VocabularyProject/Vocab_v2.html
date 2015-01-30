@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html ng-app="vocabApp">
+	<head>
+		<title>Vocabulary Learning Assistant</title>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js" ></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="Vocab_v2.js" ></script>
+		<link rel="stylesheet" href="Vocab_v2.css"></link>
+	</head>
+	<body ng-controller="vocabController">
+		<div class="score">
+			Score	: <span class="cscore">{{words_success}} / {{words_completed}}</span><br>
+			Percentage	: <span class="cpct">{{words_pct}}%</span><br>
+			Words Pending: <span class="cpending">{{words_left}}</span>
+		</div><br>
+		
+		<input type="button" value="Validate" ng-click="validate()" id="validate"/>
+		<input type="button" value="Next Question" ng-click="getNextQn()" id="next"/><br><br>
+
+		<div>{{meaning}}</div><br>
+		Ans:<input type="input" id="word"><br>
+		
+		<div id="ans">{{word}}</div><br>
+		
+	</body>
+</html>
