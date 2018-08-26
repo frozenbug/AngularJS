@@ -8,17 +8,17 @@
 			var ngApp = angular.module('repeatApp',[]);
 			ngApp.controller('repeatController',function($scope) {
 				$scope.fruits=['apple','mango','pear'];
-				
+
 				$scope.addFruit = function() {
 					if( $scope.fruits.indexOf($scope.newfruit) === -1) {
 						$scope.fruits.push($scope.newfruit);
 						$scope.newfruit = "";
-					}	
+					}
 				}
 				$scope.removeFruit = function (delFruit) {
 					if( $scope.fruits.indexOf($scope.newfruit) === -1) {
 						$scope.fruits.splice($scope.fruits.indexOf(delFruit),1);
-					}	
+					}
 				}
 			});
 		</script>
@@ -26,7 +26,7 @@
 	<body ng-controller="repeatController">
 		Fruits List <select>
 			<option ng-repeat="fruit in fruits" value="fruit">{{fruit}}</option>
-		</select	
+		</select
 
 		<ul>
 			<li ng-repeat="fruit in fruits"> {{fruit}} <a href="" ng-click="removeFruit(fruit)"> - </a> </li>
@@ -34,7 +34,7 @@
 		<form ng-submit="addFruit()">
 			Fruit <input type="text" ng-model="newfruit" />
 			<input type="submit" value="Add">
-		</form>	
+		</form>
 		<br/>
 	</body>
 </html>
